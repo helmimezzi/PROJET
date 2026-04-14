@@ -1,0 +1,21 @@
+name: TESTCODE
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+test:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout code
+uses: actions/checkout@v3
+
+with:
+node-version: &#39;16&#39;
+
+- name: Install dependencies
+run: npm install
+
+- name: Run tests
+run: npm test
